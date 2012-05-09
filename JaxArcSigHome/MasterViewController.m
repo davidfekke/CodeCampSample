@@ -27,10 +27,37 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    //self.navigationItem.rightBarButtonItem = addButton;
+    dispatch_queue_t myQueue = dispatch_queue_create("get people list", NULL);
+    dispatch_async(myQueue, ^{
+        NSURL *myURL = [NSURL URLWithString:@"http://192.168.1.77/APISamples/api/people"];
+        //NSData *data = [NSData dataWithContentsOfURL:myURL];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL];
+        [request setHTTPMethod:@"GET"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        NSURLResponse *response = nil;
+        NSError *myErr;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&myErr];
+        
+//        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+//        NSDictionary *resDict = [httpResponse allHeaderFields];
+//        
+//        int statusCode = [httpResponse statusCode];
+//        NSLog(@"Status Code = %d", statusCode); 
+//        for (id key in resDict) {
+//            NSLog(@"key: %@, value: %@", key, [resDict objectForKey:key]);
+//        }
+        _objects = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&myErr];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        // Ending main queue
+    });
+    // End myQueue
+    dispatch_release(myQueue);
 }
 
 - (void)viewDidUnload
@@ -70,8 +97,10 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+    NSMutableDictionary *object = [_objects objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", [object objectForKey:@"FirstName"], [object objectForKey:@"LastName"]];
+    
+    //
     return cell;
 }
 
@@ -111,8 +140,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = [_objects objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        NSMutableDictionary *object = [_objects objectAtIndex:indexPath.row];
+        [[segue destinationViewController] setDetailItem:[[object objectForKey:@"Id"] description]];
     }
 }
 
