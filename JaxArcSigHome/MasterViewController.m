@@ -33,23 +33,14 @@
     //self.navigationItem.rightBarButtonItem = addButton;
     dispatch_queue_t myQueue = dispatch_queue_create("get people list", NULL);
     dispatch_async(myQueue, ^{
-        NSURL *myURL = [NSURL URLWithString:@"http://192.168.1.77/APISamples/api/people"];
-        //NSData *data = [NSData dataWithContentsOfURL:myURL];
+        NSURL *myURL = [NSURL URLWithString:@"http://172.20.10.6/CodeCampAPI/api/person"];
+
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL];
         [request setHTTPMethod:@"GET"];
         [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         NSURLResponse *response = nil;
         NSError *myErr;
         NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&myErr];
-        
-//        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-//        NSDictionary *resDict = [httpResponse allHeaderFields];
-//        
-//        int statusCode = [httpResponse statusCode];
-//        NSLog(@"Status Code = %d", statusCode); 
-//        for (id key in resDict) {
-//            NSLog(@"key: %@, value: %@", key, [resDict objectForKey:key]);
-//        }
         _objects = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&myErr];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];

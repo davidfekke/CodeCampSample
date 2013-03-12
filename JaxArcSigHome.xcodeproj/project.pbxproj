@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630ED5AF16169D3200EABCE3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 630ED5AE16169D3200EABCE3 /* Default-568h@2x.png */; };
+		630ED5FD161BB70F00EABCE3 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 630ED5FC161BB70F00EABCE3 /* Car.m */; };
 		634E779E1547944A00EC9FB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634E779D1547944A00EC9FB2 /* UIKit.framework */; };
 		634E77A01547944A00EC9FB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634E779F1547944A00EC9FB2 /* Foundation.framework */; };
 		634E77A21547944A00EC9FB2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634E77A11547944A00EC9FB2 /* CoreGraphics.framework */; };
@@ -19,20 +21,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630ED5AE16169D3200EABCE3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		630ED5FB161BB70F00EABCE3 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		630ED5FC161BB70F00EABCE3 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		634E77991547944A00EC9FB2 /* JaxArcSigHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaxArcSigHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		634E779D1547944A00EC9FB2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		634E779F1547944A00EC9FB2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		634E77A11547944A00EC9FB2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		634E77A51547944A00EC9FB2 /* JaxArcSigHome-Info.plist */ = {isa = PBXFileReference; path = "JaxArcSigHome-Info.plist"; sourceTree = "<group>"; };
+		634E77A51547944A00EC9FB2 /* JaxArcSigHome-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JaxArcSigHome-Info.plist"; sourceTree = "<group>"; };
 		634E77A71547944A00EC9FB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		634E77A91547944A00EC9FB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		634E77AB1547944A00EC9FB2 /* JaxArcSigHome-Prefix.pch */ = {isa = PBXFileReference; path = "JaxArcSigHome-Prefix.pch"; sourceTree = "<group>"; };
-		634E77AC1547944A00EC9FB2 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		634E77AB1547944A00EC9FB2 /* JaxArcSigHome-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JaxArcSigHome-Prefix.pch"; sourceTree = "<group>"; };
+		634E77AC1547944A00EC9FB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		634E77AD1547944A00EC9FB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		634E77B01547944A00EC9FB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		634E77B21547944A00EC9FB2 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		634E77B21547944A00EC9FB2 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		634E77B31547944A00EC9FB2 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		634E77B51547944A00EC9FB2 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		634E77B51547944A00EC9FB2 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		634E77B61547944A00EC9FB2 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +58,7 @@
 		634E778E1547944A00EC9FB2 = {
 			isa = PBXGroup;
 			children = (
+				630ED5AE16169D3200EABCE3 /* Default-568h@2x.png */,
 				634E77A31547944A00EC9FB2 /* JaxArcSigHome */,
 				634E779C1547944A00EC9FB2 /* Frameworks */,
 				634E779A1547944A00EC9FB2 /* Products */,
@@ -88,6 +94,8 @@
 				634E77B51547944A00EC9FB2 /* DetailViewController.h */,
 				634E77B61547944A00EC9FB2 /* DetailViewController.m */,
 				634E77A41547944A00EC9FB2 /* Supporting Files */,
+				630ED5FB161BB70F00EABCE3 /* Car.h */,
+				630ED5FC161BB70F00EABCE3 /* Car.m */,
 			);
 			path = JaxArcSigHome;
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 			files = (
 				634E77A81547944A00EC9FB2 /* InfoPlist.strings in Resources */,
 				634E77B11547944A00EC9FB2 /* MainStoryboard.storyboard in Resources */,
+				630ED5AF16169D3200EABCE3 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +178,7 @@
 				634E77AE1547944A00EC9FB2 /* AppDelegate.m in Sources */,
 				634E77B41547944A00EC9FB2 /* MasterViewController.m in Sources */,
 				634E77B71547944A00EC9FB2 /* DetailViewController.m in Sources */,
+				630ED5FD161BB70F00EABCE3 /* Car.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +290,7 @@
 				634E77BC1547944A00EC9FB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
