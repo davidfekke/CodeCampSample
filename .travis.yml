@@ -1,3 +1,2 @@
 language: objective-c
 xcode_project: JaxArcSigHome.xcodeproj
-xcode_scheme: JaxArcSigHome
